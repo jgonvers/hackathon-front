@@ -1,3 +1,5 @@
+import values from "./objects"
+
 export class App {
-  public message: string = 'Hello World!';
+  public message: string = values.name;
 }
