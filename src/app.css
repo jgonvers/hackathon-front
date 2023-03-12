@@ -29,3 +29,10 @@ body {
   background-image: linear-gradient(to right, lightblue, darkblue);
   font-family: 'Titillium Web', sans-serif;
 }
+
+#key-display {
+  background-color: white;
+  margin: auto;
+  width: 1000px;
+  height: 500px;
+}
