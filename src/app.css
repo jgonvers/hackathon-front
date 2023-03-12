@@ -21,7 +21,7 @@
   padding: 5px
 }
 
-.ux-card h2 {
+.ux-card__title {
   text-align: center;
 }
 
@@ -31,7 +31,6 @@ body {
 }
 
 #key-display {
-  background-color: white;
   margin: auto;
   width: 1000px;
   height: 500px;

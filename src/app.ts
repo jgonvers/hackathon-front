@@ -29,18 +29,10 @@ for (let feature of features) {
 }
 objects[1].geometry.computeBoundingSphere();
 console.log(objects[1].geometry.boundingSphere)
-const center: THREE.Vector3 = objects[1].geometry.boundingSphere.center//bb.getCenter(new THREE.Vector3)
-//const center: THREE.Vector3 = new THREE.Vector3(61.45, 462.01, 2)
-//camera.position.set(center.x, center.y, center.z + 3);
-//console.log(camera.position)
-//console.log(center);
+const center: THREE.Vector3 = objects[1].geometry.boundingSphere.center
 controls.target = center;
-//camera.rotation.y = Math.PI;
-//camera.lookAt(center);
 console.log(camera.position)
 console.log(camera)
-//controls.update();
-
 
 export class App {
   public message: string = values.name;
@@ -50,17 +42,12 @@ export class App {
     const display = document.getElementById("key-display");
     display.appendChild(renderer.domElement);
     renderer.domElement.addEventListener("contextmenu", function () { return false; });
-    //controls = new OrbitControls(camera, renderer.domElement);
     animate();
-
   }
-
 }
 
 var animate = function () {
   requestAnimationFrame(animate)
-  //controls.update();
-  //console.log(controls.object);
   renderer.render(scene, camera)
 };
 
@@ -73,7 +60,6 @@ function generateGeometry(coordinates, height: number) {
     shape.lineTo(coordinate[0] * scale, coordinate[1] * scale);
     shape.moveTo(coordinate[0] * scale, coordinate[1] * scale);
   }
-  //shape.lineTo(coordinates[0][0], coordinates[0][1])
   const extrudeSettings = {
     depth: height,
     bevelEnabled: false,

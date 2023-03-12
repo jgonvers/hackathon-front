@@ -7,7 +7,7 @@
   <div class="cards-container">
     <!-- j'aurais plusto fait un deuxieme template pour les cartes mais l'exercice demande de tout faire dans app-->
     <div class="ux-card" repeat.for="feature of features">
-      <h2>${feature.properties.name}</h2>
+      <h2 class="ux-card__title">${feature.properties.name}</h2>
       <p>Type de géomètrie: ${feature.geometry.type}</p>
       <p>Nombre de sommets: ${feature.geometry.coordinates.length}</p>
     </div>
