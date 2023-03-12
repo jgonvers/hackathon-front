@@ -1,14 +1,12 @@
-import { Feature, Geometry } from './main';
 import values from "./objects";
 import * as THREE from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const scene: THREE.Scene = new THREE.Scene();
 const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(75, 2, 0.1, 1000);
-const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer();
+const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(1000, 500);
 const controls: OrbitControls = new OrbitControls(camera, renderer.domElement);
-//controls.enableZoom = true;
 controls.maxDistance = 200;
 const matYel: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({ color: 0xFFFF00 });
 const matRed: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({ color: 0xFF0000 });
@@ -31,6 +29,7 @@ objects[1].geometry.computeBoundingSphere();
 console.log(objects[1].geometry.boundingSphere)
 const center: THREE.Vector3 = objects[1].geometry.boundingSphere.center
 controls.target = center;
+camera.position.set(center.x, center.y, center.z + 40);
 console.log(camera.position)
 console.log(camera)
 
